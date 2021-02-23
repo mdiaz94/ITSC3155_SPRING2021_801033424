@@ -1,4 +1,4 @@
-
+#!/usr/bin/python3
 import pythonBasics1
 # main() is already set up to call the functions
 # we want to test with a few different inputs,
@@ -19,6 +19,7 @@ def main():
     check_count_char = True
     check_is_power_of = False
     check_longest_word = False
+
 
     if check_count_char:
         print('Testing count_char:')
