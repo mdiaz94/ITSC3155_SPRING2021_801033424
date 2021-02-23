@@ -30,7 +30,7 @@ def is_power_of(i,j):
   elif j==0:
     return i==0
   while j % i == 0:
-    j //= i
+    j //= i #floor operator
   return j==1
     
 
@@ -41,6 +41,11 @@ def is_power_of(i,j):
 # if 2 or more words are tied as longest then return the one that occurs LAST in the sentence
 # if s is an empty string return an empty string
 def longest_word(s):
-  # YOUR CODE HERE
+   # YOUR CODE HERE
+  long = ""
+  newString = s.split(" ")
+  for i in newString:
+    if len(i)>=len(long):
+      long = i
 
-  return
+  return long
