@@ -22,13 +22,13 @@ def count_threes(n):
 def longest_consecutive_repeating_char(s):
       # YOUR CODE HERE
     n = len(s)
-    count = 1 #initialize count variable
-    max = 1 #initialize max count
-    char = s[0]#initialize character to return
+    count = 1  # initialize count variable
+    max = 1  # initialize max count
+    char = s[0]  # initialize character to return
 
-    #iterates through each character in the string to count if that variable is the "max"
-    for i in range(0,n-1):
-        if s[i] ==s[i+1]:
+    # iterates through each character in the string to count if that variable is the "max"
+    for i in range(0, n-1):
+        if s[i] == s[i+1]:
             count += 1
 
         else:
@@ -51,5 +51,17 @@ def longest_consecutive_repeating_char(s):
 # and ignore spaces (i.e. case insensitive).
 def is_palindrome(s):
     # YOUR CODE HERE
-
-    return
+    i = 0
+    strLength = len(s)-1
+    while i <= strLength:
+        if s[i] == ' ':
+            i += 1
+            continue
+        if s[strLength] == ' ':
+            strLength -= 1
+            continue
+        if s[i].lower() != s[strLength].lower():
+            return False
+        i += 1
+        strLength -= 1
+    return True
