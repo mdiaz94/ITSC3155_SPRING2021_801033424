@@ -15,6 +15,14 @@ class TestPythonBasicsOne(unittest.TestCase):
 
         self.assertEqual(pythonBasics3.ends_with_consonant("Do I know how old you are you"), False)
 
+        self.assertEqual(pythonBasics3.ends_with_consonant("Has anyone ever as far even wanted to go do look more like"), False)
+
+        self.assertEqual(pythonBasics3.ends_with_consonant("Who was phone"), False)
+
+        self.assertEqual(pythonBasics3.ends_with_consonant("The dog is actually not a dog, but a BIG dog"), True)
+
+        self.assertEqual(pythonBasics3.ends_with_consonant("What was their name again"), True)
+        
         # Please add three more test cases following the order above
 
 #Test case for ends_with_number
