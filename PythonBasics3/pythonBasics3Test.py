@@ -36,6 +36,12 @@ class TestPythonBasicsOne(unittest.TestCase):
 
         self.assertEqual(pythonBasics3.ends_with_number("Blue plus purple equals 5"), True)
 
+        self.assertEqual(pythonBasics3.ends_with_number("This test will fail1"), True)
+
+        self.assertEqual(pythonBasics3.ends_with_number("Bro I swear there were 13 slices of pizza cmon"), False)
+
+        self.assertEqual(pythonBasics3.ends_with_number("In the end there were 2"), True)
+
         # Please add three more test cases following the order above
 
 
