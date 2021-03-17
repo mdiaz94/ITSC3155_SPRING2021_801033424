@@ -12,7 +12,24 @@
 
 def count_threes(n):
     # YOUR CODE HERE
-  return int(n/3)
+        n = list(str(n)) 
+        dict ={}
+        dict[3] = 0
+        dict[6] = 0
+        dict[9] = 0
+        for i in n:
+                j = int(i)
+                if j%3 == 0 and j!=0:
+                        dict[j] = dict[j] + 1
+        maximum = -1
+        index = -1
+        for k,v in dict.items():
+                if v > maximum :
+                        maximum = v
+                        index = k
+
+        #and returning the number finally
+        return index
 
 
 # Part B. longest_consecutive_repeating_char
@@ -20,27 +37,32 @@ def count_threes(n):
 # a string s and returns the character that has the longest consecutive repeat.
 
 def longest_consecutive_repeating_char(s):
-      # YOUR CODE HERE
-    n = len(s)
-    count = 1  # initialize count variable
-    max = 1  # initialize max count
-    char = s[0]  # initialize character to return
+        # YOUR CODE HERE
+        s = list(s)
+        l = len(s)
+        count = 1
+        dict ={}
+        for i in range(0,l-1):
+                if(s[i] != s[i+1]):
+                      if((s[i] in dict) and dict[s[i]] > count ):
+                             continue
+                      else:
+                             dict[s[i]] = count
+                             count = 1
+                else:
+                      count = count + 1
+        dict[s[l-1]] = count
+        max = -1
+        for k,v in dict.items():
+                if v > max :
+                        max = v              
+        longest = []
+        for k,v in dict.items():
+                if v == max :
+                        longest.append(k)
 
-    # iterates through each character in the string to count if that variable is the "max"
-    for i in range(0, n-1):
-        if s[i] == s[i+1]:
-            count += 1
-
-        else:
-            if count > max:
-                max = count
-                char = s[i]
-            count = 1
-
-    if count > max:
-        max = count
-        char = s[i]
-    return char
+                        
+        return longest
 
 
 # Part C. is_palindrome
@@ -51,17 +73,21 @@ def longest_consecutive_repeating_char(s):
 # and ignore spaces (i.e. case insensitive).
 def is_palindrome(s):
     # YOUR CODE HERE
-    i = 0
+    count = 0
     strLength = len(s)-1
-    while i <= strLength:
-        if s[i] == ' ':
-            i += 1
+
+    while count <= strLength:
+        if s[count] == ' ':
+            count += 1
             continue
+
         if s[strLength] == ' ':
             strLength -= 1
             continue
-        if s[i].lower() != s[strLength].lower():
+
+        if s[count].lower() != s[strLength].lower():
             return False
-        i += 1
+            
+        count += 1
         strLength -= 1
     return True
