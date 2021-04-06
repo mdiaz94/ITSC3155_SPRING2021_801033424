@@ -1,7 +1,5 @@
 from database import db
-from flask import Flask   # Flask is the web app that we will customize
-from models import Note as Note
-from models import User as User
+
 
 
 class Note (db.Model):
@@ -16,7 +14,7 @@ class Note (db.Model):
         self.date = date
 
 
-class User(db.model):
+class User(db.Model):
     id = db.Column ("id", db.Integer, primary_key=True)
     name = db.Column("name", db.String(100))
     email = db.Column("email", db.String(100))
